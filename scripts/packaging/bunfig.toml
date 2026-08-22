@@ -1,0 +1,2 @@
+# 打包/同步脚本专用 bunfig：勿继承仓库根 preload（DSH 根目录当前无 bunfig）。
+# CI 用 bun --config=scripts/packaging/bunfig.toml 运行 sync 脚本。

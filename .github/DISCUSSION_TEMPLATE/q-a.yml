@@ -1,0 +1,28 @@
+title: "[问答] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        用法、怎么配模型、功能怎么用，发这里。
+
+        **安装失败 / 打不开 / 崩溃** 请走 [Issues](https://github.com/hyqibot/DeepSeek-Harness-Token-Free/issues/new/choose)，不要发 Discussions。
+  - type: textarea
+    id: question
+    attributes:
+      label: 你想做什么，现在卡在哪里
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统（可选）
+      options:
+        - Windows
+        - macOS Apple Silicon
+        - macOS Intel
+        - 不确定
+  - type: input
+    id: version
+    attributes:
+      label: 桌面端版本（可选）
+      placeholder: 例如 2.0.0

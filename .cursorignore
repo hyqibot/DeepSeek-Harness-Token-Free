@@ -1,0 +1,31 @@
+# Cursor indexer: skip heavy/generated trees (rg + embeddings at startup).
+node_modules/
+**/node_modules/
+vendor/
+**/vendor/
+.yarn/cache/
+.yarn/unplugged/
+.pnp.*
+dist/
+**/dist/
+lib/
+**/lib/
+**/__pycache__/
+**/*.pyc
+**/*.tsbuildinfo
+.git/
+**/.git/objects/**
+**/target/
+.cache/
+.pnpm-store/
+*.bundle.mjs
+build/
+**/build/
+coverage/
+artifacts/
+# DSH-specific
+deepseek-harness/
+dsh-plugin-desktop/vendor/copaw-zero-token/gateway-entry/
+dsh-plugin-desktop/vendor/copaw-zero-token/python/
+dsh-plugin-desktop/vendor/copaw-zero-token/webauth-ts/
+assets/

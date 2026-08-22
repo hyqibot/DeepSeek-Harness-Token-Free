@@ -1,0 +1,35 @@
+# Desktop Host operations compose around the existing Web bundle. Compatibility
+# mode keeps upstream ownership of the browser carrier and rendered UI.
+- insert:
+    - id: desktop-shell
+      name: dsh-plugin-desktop
+      config:
+        mode: compatibility
+    - id: desktop-terminal
+      name: dsh-plugin-desktop/terminal
+      disabled: !!js process.platform === 'linux'
+    - id: desktop-pnpm
+      name: dsh-plugin-desktop/pnpm
+    - id: desktop-profiles
+      name: dsh-plugin-desktop/profiles
+    - id: desktop-updates
+      name: dsh-plugin-desktop/updates
+    - id: desktop-channels
+      name: dsh-plugin-desktop/channels
+    - id: desktop-mobile
+      name: dsh-plugin-desktop/mobile
+    - id: desktop-zero-token
+      name: dsh-plugin-desktop/zero-token
+    - id: desktop-hyqi
+      name: dsh-plugin-desktop/hyqi
+    - id: desktop-marketplace
+      name: dsh-plugin-desktop/marketplace
+    - id: desktop-plugin-toggles
+      name: dsh-plugin-desktop/plugin-toggles
+
+# A desktop launch has no terminal operator waiting for the Web readiness line.
+- id: web-runtime
+  config:
+    printUrl: false
+    surfaceContext: true
+    trustedHosts: []

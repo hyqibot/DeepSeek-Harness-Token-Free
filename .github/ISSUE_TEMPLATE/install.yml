@@ -1,0 +1,75 @@
+name: 安装 / 打不开
+description: 下载、安装、macOS 打不开、Windows 被拦截、免 Token 不可用
+title: "[安装] "
+labels: ["install"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        常见情况先对照：
+
+        1. **必须下 Releases 安装包**，不要只用源码 `yarn dev`（公开源码没有完整免 Token 网关）。
+        2. **macOS**：当前安装包未公证。请在 Finder 里 **右键 → 打开**，不要双击。系统提示「无法验证开发者」时选打开。
+        3. **Windows**：SmartScreen 可能提示未知应用，选「仍要运行」。
+        4. 芯片要对上：Apple Silicon 下 `arm64.dmg`，Intel Mac 下 `x64.dmg`，Windows 下 `x64-Setup.exe`。
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 安装包来自 [GitHub Releases](https://github.com/hyqibot/DeepSeek-Harness-Token-Free/releases/latest)，不是第三方网盘
+          required: true
+        - label: macOS 已试过右键「打开」（未公证包双击会被拦）
+          required: false
+        - label: 已搜索过 [现有 Issues](https://github.com/hyqibot/DeepSeek-Harness-Token-Free/issues)
+          required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统
+      options:
+        - Windows 10
+        - Windows 11
+        - macOS Apple Silicon（M 系列）
+        - macOS Intel
+        - 其他
+    validations:
+      required: true
+  - type: dropdown
+    id: asset
+    attributes:
+      label: 下载的是哪个包
+      options:
+        - DSH-Desktop-*-x64-Setup.exe（Windows）
+        - DSH-Desktop-*-arm64.dmg（Apple Silicon）
+        - DSH-Desktop-*-x64.dmg（Intel Mac）
+        - 不确定 / 其他
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: 卡在哪一步
+      options:
+        - 下载失败 / 链接打不开
+        - 安装过程报错
+        - 装完打不开 / 闪退
+        - macOS「无法打开，因为无法验证开发者」
+        - Windows SmartScreen / 杀毒拦截
+        - 能打开，但免 Token / 网页登录不可用
+        - 能打开，但官方 API Key 也连不上
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 详细说明
+      description: 你点了什么、看到什么提示。请附完整报错原文。
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图
+      description: 系统拦截提示、安装失败窗口、应用内错误。请打码密钥。

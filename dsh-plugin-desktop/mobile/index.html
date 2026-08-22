@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <title>DSH Desktop</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; font: 16px/1.45 system-ui, sans-serif; background: #0b1220; color: #e8eefc; }
+    main { max-width: 42rem; margin: 0 auto; padding: 1.25rem; }
+    h1 { font-size: 1.2rem; margin: 0 0 0.75rem; }
+    p, label { color: #9db0d0; }
+    textarea, input { width: 100%; box-sizing: border-box; border-radius: 0.75rem; border: 1px solid #24324d; background: #121b2e; color: inherit; padding: 0.75rem; }
+    textarea { min-height: 6rem; }
+    button { margin-top: 0.75rem; width: 100%; border: 0; border-radius: 0.75rem; padding: 0.85rem; background: #3b82f6; color: white; font-weight: 600; }
+    pre { white-space: pre-wrap; background: #121b2e; border-radius: 0.75rem; padding: 0.75rem; min-height: 4rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>DSH Desktop 手机遥控</h1>
+    <p>把此页添加到主屏幕即可当作 App 使用。桌面必须和手机在同一局域网。</p>
+    <label>配对码</label>
+    <input id="code" autocomplete="one-time-code" placeholder="托盘里的 6 位配对码">
+    <button id="pair" type="button">配对</button>
+    <label>任务</label>
+    <textarea id="text" placeholder="发给本机 Agent 的任务"></textarea>
+    <button id="send" type="button">发送</button>
+    <pre id="out">等待输入</pre>
+  </main>
+  <script>
+    const params = new URLSearchParams(location.search)
+    const token = params.get('token') || localStorage.getItem('dsh-mobile-token') || ''
+    if (token) localStorage.setItem('dsh-mobile-token', token)
+    const deviceId = localStorage.getItem('dsh-mobile-device') || (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()))
+    localStorage.setItem('dsh-mobile-device', deviceId)
+    const out = document.getElementById('out')
+    async function call(path, body) {
+      const headers = { 'content-type': 'application/json' }
+      if (token) headers.authorization = 'Bearer ' + token
+      const response = await fetch(path, { method: 'POST', headers, body: JSON.stringify(body) })
+      const payload = await response.json()
+      if (!response.ok) throw new Error(payload.error || response.status)
+      return payload
+    }
+    document.getElementById('pair').onclick = async () => {
+      try {
+        const payload = await call('/v1/pair', {
+          code: document.getElementById('code').value,
+          deviceId,
+          displayName: 'Mobile',
+        })
+        out.textContent = payload.reply
+      } catch (error) {
+        out.textContent = String(error.message || error)
+      }
+    }
+    document.getElementById('send').onclick = async () => {
+      try {
+        const payload = await call('/v1/chat', {
+          text: document.getElementById('text').value,
+          deviceId,
+          displayName: 'Mobile',
+        })
+        out.textContent = payload.reply
+      } catch (error) {
+        out.textContent = String(error.message || error)
+      }
+    }
+  </script>
+</body>
+</html>

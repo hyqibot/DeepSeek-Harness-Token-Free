@@ -1,0 +1,4 @@
+dist/
+lib/
+node_modules/
+vendor/copaw-zero-token/**/node_modules/

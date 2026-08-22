@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 下载最新桌面版
+    url: https://github.com/hyqibot/DeepSeek-Harness-Token-Free/releases/latest
+    about: Windows / macOS 安装包只从这里下。源码 yarn dev 无法使用免 Token。
+  - name: Discussions 问答与想法
+    url: https://github.com/hyqibot/DeepSeek-Harness-Token-Free/discussions
+    about: 用法、功能建议、交流请先发 Discussions，不要占用 Issues。

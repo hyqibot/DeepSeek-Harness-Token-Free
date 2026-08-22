@@ -1,0 +1,16 @@
+{
+  "source": {
+    "owner": "hyqibot",
+    "repo": "deepseek-harness-private",
+    "url": "https://github.com/hyqibot/deepseek-harness-private",
+    "description": "私有源码仓：全量工作树；push master / tag 触发 Sync Public Source"
+  },
+  "releases": {
+    "owner": "hyqibot",
+    "repo": "DeepSeek-Harness-Token-Free",
+    "url": "https://github.com/hyqibot/DeepSeek-Harness-Token-Free",
+    "pagesUrl": "https://hyqibot.github.io/DeepSeek-Harness-Token-Free/",
+    "updaterLatestJson": "https://github.com/hyqibot/DeepSeek-Harness-Token-Free/releases/latest/download/latest.json",
+    "description": "公开 Release 仓：过滤源码 + 安装包 + latest.json 更新通道，供匿名下载；不含 Zero-Token 网关实现"
+  }
+}

@@ -1,0 +1,18 @@
+title: "[想法] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        新功能、体验改进都可以说。Bug 请走 [Issues](https://github.com/hyqibot/DeepSeek-Harness-Token-Free/issues/new/choose)。
+  - type: textarea
+    id: idea
+    attributes:
+      label: 你的想法
+      description: 想解决什么问题？现在怎么用会别扭？
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充
+      description: 参考产品、截图、使用场景，可选。

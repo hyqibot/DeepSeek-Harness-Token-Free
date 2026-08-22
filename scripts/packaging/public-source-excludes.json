@@ -1,0 +1,63 @@
+{
+  "description": "私有仓 → 公开仓 DeepSeek-Harness-Token-Free 源码同步时排除的路径（与 cc-haha 同类对齐，路径按 DSH 布局）",
+  "excludeDirectoryNamesEverywhere": [
+    ".git",
+    "node_modules",
+    "target",
+    "artifacts",
+    ".omx",
+    ".cursor",
+    "dist",
+    "lib"
+  ],
+  "excludeDirectories": [
+    ".github/workflows",
+    "license-server",
+    "vendor/copaw-zero-token",
+    "dsh-plugin-desktop/vendor/copaw-zero-token",
+    "deepseek-harness",
+    ".tmp-harness",
+    "docs/plans",
+    ".yarn/cache",
+    ".yarn/unplugged",
+    "dsh-plugin-desktop/dist",
+    "dsh-plugin-desktop/lib",
+    "desktop/build-artifacts",
+    "desktop/src-tauri/binaries",
+    "desktop/src-tauri/target"
+  ],
+  "excludeFiles": [
+    "scripts/run-license-server.ts",
+    "tmp-auth-body.json",
+    "tmp-auth.json",
+    "tmp-payload.json",
+    ".github/workflows/ci.yml.disabled",
+    ".github/workflows/sync-public-source.yml",
+    ".github/workflows/release-desktop.yml",
+    ".github/workflows/build-desktop-dev.yml",
+    ".github/workflows/pr-triage.yml",
+    ".github/workflows/pr-quality.yml",
+    ".github/workflows/cursor-agent.yml",
+    ".github/workflows/deploy-docs.yml",
+    ".github/workflows/deploy-public-docs.yml",
+    "scripts/packaging/user-distribution-policy.json"
+  ],
+  "excludeDocPaths": [
+    "docs/reference/claude-official-models.md",
+    "docs/reference/desktop-release-and-updater.md",
+    "docs/reference/license-server-edgeone-pages.md",
+    "docs/reference/zero-token-azure-openai-placeholder.md",
+    "docs/reference/zero-token-gateway-exe-run-and-release.md",
+    "docs/reference/zero-token-gateway-sidecar-b1.md",
+    "docs/reference/zero-token-toolchain-refactor-plan.md",
+    "docs/reference/zero-token-web-toolchain.md",
+    "docs/reference/public-repo-sync-bootstrap.md"
+  ],
+  "contentScanSkipRelPaths": [
+    "scripts/packaging/user-distribution-policy.json",
+    "scripts/packaging/public-source-excludes.json",
+    "scripts/packaging/sync-public-source.ts",
+    "scripts/packaging/docs-publish-policy.json",
+    "scripts/packaging/public-source-sync.test.ts"
+  ]
+}

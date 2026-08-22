@@ -1,0 +1,5 @@
+# Bilingual-pair consistency record: the git blob hash of each side as of the last
+# confirmed-consistent state. Both languages carry equal authority. Update both files
+# and re-record their hashes with git hash-object after editing either side.
+2026-08-16-desktop-channels-and-zero-token.md: 03cc1830bd455f64fc869cb7860af22c9a627de2
+2026-08-16-desktop-channels-and-zero-token.zh.md: 1159202fc843283b891fbab2031d44be1a411d2b

@@ -1,0 +1,17 @@
+{
+  "description": "DSH 暂无 VitePress 用户站点；保留与 cc-haha 同名契约，开发者备忘不同步公开仓。",
+  "userReferenceDocs": [],
+  "developerReferenceDocs": [
+    "docs/reference/claude-official-models.md",
+    "docs/reference/desktop-release-and-updater.md",
+    "docs/reference/license-server-edgeone-pages.md",
+    "docs/reference/zero-token-azure-openai-placeholder.md",
+    "docs/reference/zero-token-gateway-exe-run-and-release.md",
+    "docs/reference/zero-token-gateway-sidecar-b1.md",
+    "docs/reference/zero-token-toolchain-refactor-plan.md",
+    "docs/reference/zero-token-web-toolchain.md",
+    "docs/reference/public-repo-sync-bootstrap.md"
+  ],
+  "publicPagesBase": "/DeepSeek-Harness-Token-Free/",
+  "publicPagesRepo": "hyqibot/DeepSeek-Harness-Token-Free"
+}

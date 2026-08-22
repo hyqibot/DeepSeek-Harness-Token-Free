@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "noEmit": true,
+    "emitDeclarationOnly": false
+  },
+  "include": ["scripts/**/*.ts", "src/*.ts", "tests/**/*.ts", "tests/**/*.tsx"],
+  "exclude": ["tests/client-environment.spec.ts", "tests/client-zero-token.spec.ts", "tests/client-channels.spec.ts", "tests/client-hyqi.spec.ts", "tests/client-community.spec.ts"]
+}

@@ -1,0 +1,16 @@
+.DS_Store
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+node_modules/
+*.tsbuildinfo
+.build/
+
+dsh-plugin-desktop/dist/
+dsh-plugin-desktop/lib/
+
+# ScreenToGif originals are too large for GitHub (>100MB). README uses assets/desktop-demo.gif.
+/life.gif
